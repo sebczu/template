@@ -1,5 +1,5 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <artifactId>parent</artifactId>
@@ -13,6 +13,7 @@
 
   <properties>
     <spring-boot.version>2.4.12</spring-boot.version>
+    <jib-maven-plugin.version>3.1.4</jib-maven-plugin.version>
   </properties>
 
   <dependencyManagement>
@@ -41,6 +42,29 @@
           <groupId>org.springframework.boot</groupId>
           <artifactId>spring-boot-maven-plugin</artifactId>
           <version>${spring-boot.version}</version>
+        </plugin>
+
+        <plugin>
+          <groupId>com.google.cloud.tools</groupId>
+          <artifactId>jib-maven-plugin</artifactId>
+          <version>${jib-maven-plugin.version}</version>
+          <configuration>
+            <from>
+              <image>openjdk:11-jre-slim</image>
+            </from>
+            <to>
+              <image>sebczu/personal:template-${project.version}</image>
+              <tags>
+                <tag>template-latest</tag>
+              </tags>
+            </to>
+            <container>
+              <creationTime>USE_CURRENT_TIMESTAMP</creationTime>
+              <ports>
+                <port>8080</port>
+              </ports>
+            </container>
+          </configuration>
         </plugin>
       </plugins>
     </pluginManagement>
