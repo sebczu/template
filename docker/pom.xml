@@ -12,11 +12,16 @@
     <version>0.0.1</version>
   </parent>
 
+  <properties>
+    <docker-compose-maven-plugin.version>4.0.0</docker-compose-maven-plugin.version>
+  </properties>
+
   <build>
     <plugins>
       <plugin>
         <groupId>com.dkanejs.maven.plugins</groupId>
         <artifactId>docker-compose-maven-plugin</artifactId>
+        <version>${docker-compose-maven-plugin.version}</version>
         <configuration>
           <composeFile>${project.basedir}/docker-compose.yml</composeFile>
           <detachedMode>true</detachedMode>

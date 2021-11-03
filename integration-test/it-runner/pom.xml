@@ -1,0 +1,75 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <artifactId>it-runner</artifactId>
+  <packaging>pom</packaging>
+
+  <parent>
+    <groupId>com.sebczu.template</groupId>
+    <artifactId>it-parent</artifactId>
+    <version>0.0.1</version>
+    <relativePath>../it-parent</relativePath>
+  </parent>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>com.dkanejs.maven.plugins</groupId>
+        <artifactId>docker-compose-maven-plugin</artifactId>
+        <configuration>
+          <composeFile>${project.basedir}/../../docker/docker-compose.yml</composeFile>
+          <detachedMode>true</detachedMode>
+          <envFile>${project.basedir}/../../docker/.env</envFile>
+        </configuration>
+        <executions>
+          <execution>
+            <id>up</id>
+            <phase>pre-integration-test</phase>
+            <goals>
+              <goal>up</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>down</id>
+            <phase>post-integration-test</phase>
+            <goals>
+              <goal>down</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-failsafe-plugin</artifactId>
+        <configuration>
+          <includes>
+            <include>**/*.java</include>
+          </includes>
+          <dependenciesToScan>
+            <dependency>com.sebczu.template:*</dependency>
+          </dependenciesToScan>
+        </configuration>
+        <executions>
+          <execution>
+            <id>integration-test</id>
+            <phase>integration-test</phase>
+            <goals>
+              <goal>integration-test</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
+  <dependencies>
+    <!--INTERNAL-->
+    <dependency>
+      <groupId>com.sebczu.template</groupId>
+      <artifactId>it-actuator</artifactId>
+      <type>test-jar</type>
+    </dependency>
+  </dependencies>
+
+</project>

@@ -6,7 +6,7 @@
 mvn clean test
 ```
 
-#### 2. Build jar
+#### 2. Build application jar
 ```bash
 mvn clean install
 ```
@@ -24,4 +24,9 @@ mvn clean package -Pregistry-build -Djib.to.auth.username= -Djib.to.auth.passwor
 #### 5. Build docker image and run application
 ```bash
 mvn clean pre-integration-test -Plocal-build -Pdocker-compose
+```
+
+#### 5. Build docker image and run integration tests
+```bash
+mvn clean post-integration-test -Plocal-build -Pintegration-test
 ```
