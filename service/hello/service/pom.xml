@@ -18,7 +18,12 @@
       <groupId>com.sebczu.template</groupId>
       <artifactId>hello-api</artifactId>
     </dependency>
-    <!--EXTERNAL-->
+    <!--EXTERNAL TEST-->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <scope>test</scope>
+    </dependency>
   </dependencies>
 
 </project>
