@@ -16,7 +16,15 @@ jobs:
       with:
         java-version: 11
     - name: Run container and integration tests
-      run: mvn -B post-integration-test -Plocal-build -Pintegration-test
+      run: >
+        mvn -B post-integration-test
+        -Plocal-build
+        -Pintegration-test
     - name: Deploy docker image
-      run: mvn -B package -Pregistry-build -Djib.to.auth.username=${{ secrets.DOCKERHUB_USERNAME }} -Djib.to.auth.password=${{ secrets.DOCKERHUB_PASSWORD }}
+      run: >
+        mvn -B package
+        -Pregistry-build
+        -DskipTests
+        -Djib.to.auth.username=${{ secrets.DOCKERHUB_USERNAME }}
+        -Djib.to.auth.password=${{ secrets.DOCKERHUB_PASSWORD }}
 
