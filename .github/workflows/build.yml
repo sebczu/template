@@ -17,4 +17,6 @@ jobs:
       with:
         java-version: 11
     - name: Run container and integration tests
-      run: mvn -B post-integration-test -Plocal-build -Pintegration-test
+      run: mvn -B post-integration-test /
+        -Plocal-build /
+        -Pintegration-test
