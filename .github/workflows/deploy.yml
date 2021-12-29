@@ -25,6 +25,8 @@ jobs:
         mvn -B package
         -Pregistry-build
         -DskipTests
+        -Djib.from.auth.username=${{ secrets.DOCKERHUB_USERNAME }}
+        -Djib.from.auth.password=${{ secrets.DOCKERHUB_PASSWORD }}
         -Djib.to.auth.username=${{ secrets.DOCKERHUB_USERNAME }}
         -Djib.to.auth.password=${{ secrets.DOCKERHUB_PASSWORD }}
 

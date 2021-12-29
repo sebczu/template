@@ -21,3 +21,5 @@ jobs:
         mvn -B post-integration-test
         -Plocal-build
         -Pintegration-test
+        -Djib.from.auth.username=${{ secrets.DOCKERHUB_USERNAME }}
+        -Djib.from.auth.password=${{ secrets.DOCKERHUB_PASSWORD }}

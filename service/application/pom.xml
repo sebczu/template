@@ -75,10 +75,19 @@
       <groupId>com.sebczu.template</groupId>
       <artifactId>hello-service</artifactId>
     </dependency>
+    <dependency>
+      <groupId>com.sebczu.template</groupId>
+      <artifactId>user-service</artifactId>
+    </dependency>
     <!--EXTERNAL-->
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-actuator</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <scope>runtime</scope>
     </dependency>
   </dependencies>
 

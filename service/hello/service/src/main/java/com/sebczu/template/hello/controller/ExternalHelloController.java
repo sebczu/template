@@ -16,7 +16,7 @@ public class ExternalHelloController implements ExternalHelloAPI {
 
   @Override
   public Hello get() {
-    log.info("endpoint invoked: hello");
+    log.info("endpoint invoked: get");
     return getService.get();
   }
 }
