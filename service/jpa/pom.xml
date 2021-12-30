@@ -2,23 +2,21 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <artifactId>service</artifactId>
-  <packaging>pom</packaging>
+  <artifactId>jpa</artifactId>
 
   <parent>
     <groupId>com.sebczu.template</groupId>
-    <artifactId>template</artifactId>
+    <artifactId>parent</artifactId>
     <version>0.0.1</version>
+    <relativePath>../parent</relativePath>
   </parent>
 
-  <modules>
-    <module>bom</module>
-    <module>parent</module>
-
-    <module>jpa</module>
-    <module>hello</module>
-    <module>user</module>
-    <module>application</module>
-  </modules>
+  <dependencies>
+    <!--EXTERNAL-->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-data-jpa</artifactId>
+    </dependency>
+  </dependencies>
 
 </project>

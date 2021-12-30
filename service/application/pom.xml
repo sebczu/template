@@ -73,6 +73,10 @@
     <!--INTERNAL-->
     <dependency>
       <groupId>com.sebczu.template</groupId>
+      <artifactId>jpa</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.sebczu.template</groupId>
       <artifactId>hello-service</artifactId>
     </dependency>
     <dependency>

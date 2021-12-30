@@ -34,7 +34,13 @@
         <artifactId>hello-service</artifactId>
         <version>${project.version}</version>
       </dependency>
-
+      <!--JPA-->
+      <dependency>
+        <groupId>com.sebczu.template</groupId>
+        <artifactId>jpa</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <!--HELLO-->
       <dependency>
         <groupId>com.sebczu.template</groupId>
         <artifactId>user-api</artifactId>

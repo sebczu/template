@@ -18,6 +18,10 @@
       <groupId>com.sebczu.template</groupId>
       <artifactId>user-api</artifactId>
     </dependency>
+    <dependency>
+      <groupId>com.sebczu.template</groupId>
+      <artifactId>user-repository</artifactId>
+    </dependency>
     <!--EXTERNAL TEST-->
     <dependency>
       <groupId>org.springframework.boot</groupId>

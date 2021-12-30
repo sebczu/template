@@ -6,3 +6,29 @@ services:
     container_name: template-container
     ports:
       - 8080:8080
+    environment:
+      - DATABASE_HOSTNAME=mysql
+      - DATABASE_PORT=3306
+      - DATABASE_SCHEMA=template
+      - DATABASE_USERNAME=template_user
+      - DATABASE_PASSWORD=template_pass
+
+  template-sql-updater:
+    image: sebczu/personal:${TEMPLATE_SQL_UPDATER_VERSION}
+    container_name: template-sql-updater
+    environment:
+      - DATABASE_HOSTNAME=mysql
+      - DATABASE_PORT=3306
+      - DATABASE_SCHEMA=template
+      - DATABASE_USERNAME=template_user
+      - DATABASE_PASSWORD=template_pass
+
+  mysql:
+    image: mysql:5.7
+    container_name: mysql
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+    volumes:
+      - ./volumes:/docker-entrypoint-initdb.d
