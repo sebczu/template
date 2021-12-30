@@ -14,7 +14,6 @@
   <properties>
     <jib-maven-plugin.version>3.1.4</jib-maven-plugin.version>
 
-    <DATABASE_USERNAME>template-sql-user</DATABASE_USERNAME>
     <DATABASE_SCHEMA>template</DATABASE_SCHEMA>
   </properties>
 
@@ -39,7 +38,6 @@
               <creationTime>USE_CURRENT_TIMESTAMP</creationTime>
               <entrypoint>INHERIT</entrypoint>
               <environment>
-                <DATABASE_USERNAME>${DATABASE_USERNAME}</DATABASE_USERNAME>
                 <DATABASE_SCHEMA>${DATABASE_SCHEMA}</DATABASE_SCHEMA>
               </environment>
             </container>
