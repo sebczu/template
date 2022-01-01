@@ -13,6 +13,18 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- CONFIGURATION -->
+      <dependency>
+        <groupId>com.sebczu.template</groupId>
+        <artifactId>it-main</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.sebczu.template</groupId>
+        <artifactId>it-configuration</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <!-- TEST -->
       <dependency>
         <groupId>com.sebczu.template</groupId>
         <artifactId>it-actuator</artifactId>

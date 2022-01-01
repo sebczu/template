@@ -28,9 +28,14 @@
   </build>
 
   <dependencies>
+    <!-- INTERNAL -->
     <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-test</artifactId>
+      <groupId>com.sebczu.template</groupId>
+      <artifactId>it-main</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.sebczu.template</groupId>
+      <artifactId>it-configuration</artifactId>
     </dependency>
   </dependencies>
 

@@ -1,4 +1,4 @@
-package com.sebczu.template.actuator;
+package com.sebczu.template.it.main;
 
 import static java.util.TimeZone.getTimeZone;
 

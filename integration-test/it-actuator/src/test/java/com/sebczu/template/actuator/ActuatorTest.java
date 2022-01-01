@@ -1,14 +1,29 @@
 package com.sebczu.template.actuator;
 
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.springframework.http.HttpStatus.OK;
 
-@SpringBootTest(classes = SpringBootIntegrationTest.class)
+import com.sebczu.template.it.main.IntegrationTest;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.web.client.TestRestTemplate;
+import org.springframework.http.ResponseEntity;
+
+@IntegrationTest
 public class ActuatorTest {
 
+  private static final String HEALTH_URL = "/actuator/health";
+
+  @Autowired
+  private TestRestTemplate restClient;
+
   @Test
-  public void test() {
-    System.out.println("TEST INTEGRATION");
+  void shouldBeHealthy() {
+    //when
+    ResponseEntity<String> responseEntity = restClient.getForEntity(HEALTH_URL, String.class);
+
+    //then
+    assertEquals(OK, responseEntity.getStatusCode());
   }
 
 }
