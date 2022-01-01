@@ -47,7 +47,7 @@
             <include>**/*.java</include>
           </includes>
           <dependenciesToScan>
-            <dependency>com.sebczu.template:*</dependency>
+            <dependency>com.sebczu:*</dependency>
           </dependenciesToScan>
         </configuration>
         <executions>
