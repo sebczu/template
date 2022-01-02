@@ -40,27 +40,6 @@
         <artifactId>jpa</artifactId>
         <version>${project.version}</version>
       </dependency>
-      <!--HELLO-->
-      <dependency>
-        <groupId>com.sebczu.template</groupId>
-        <artifactId>user-api</artifactId>
-        <version>${project.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>com.sebczu.template</groupId>
-        <artifactId>user-domain</artifactId>
-        <version>${project.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>com.sebczu.template</groupId>
-        <artifactId>user-repository</artifactId>
-        <version>${project.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>com.sebczu.template</groupId>
-        <artifactId>user-service</artifactId>
-        <version>${project.version}</version>
-      </dependency>
     </dependencies>
   </dependencyManagement>
 

@@ -17,7 +17,6 @@
 
     <module>jpa</module>
     <module>hello</module>
-    <module>user</module>
     <module>application</module>
   </modules>
 
